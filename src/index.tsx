@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import "normalize.css";
+import "@blueprintjs/core/lib/css/blueprint.css";
 import './index.css';
-import App from './App';
+
+import "./store/init";
+
+import { App } from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
