@@ -1,6 +1,10 @@
-// data
-export type Pair = [string, string];
-export type Dict = { id: string; pair: Pair };
+// dictionary
+export enum DictionaryWordPosition {
+  left = 0,
+  right = 1
+}
+export type DictionaryPair = [string, string];
+export type DictionaryRow = { id: string; pair: DictionaryPair };
 
 // theme
 export enum Theme {
