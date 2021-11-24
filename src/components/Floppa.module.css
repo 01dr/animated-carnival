@@ -1,0 +1,11 @@
+.root {
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.image {
+  height: 240px;
+  width: 240px;
+  padding-bottom: 20px;
+}

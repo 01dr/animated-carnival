@@ -15,6 +15,7 @@ import {
   handleRemoveRow,
 } from "../store/dictionary";
 import { DictionaryWordPosition } from "../types";
+import { Floppa } from "./Floppa";
 
 export const Inputs: React.FC = () => {
   const dictionary = useStore($dictionary);
@@ -27,6 +28,28 @@ export const Inputs: React.FC = () => {
       onKeyDown: () => handleAddNewRow(),
     },
   ]);
+
+  if (dictionary.length < 1) {
+    return (
+      <>
+        <Floppa />
+
+        <FormGroup>
+          <ControlGroup fill>
+            <Button
+              onClick={handleAddNewRow}
+              onKeyDown={handleKeyDown}
+              onKeyUp={handleKeyUp}
+              icon="plus"
+              text="Add new row (cmd + a)"
+              large
+              intent={Intent.PRIMARY}
+            />
+          </ControlGroup>
+        </FormGroup>
+      </>
+    );
+  }
 
   return (
     <>
@@ -73,7 +96,9 @@ export const Inputs: React.FC = () => {
             onKeyUp={handleKeyUp}
             icon="plus"
             text="Add new row (cmd + a)"
-            small
+            large
+            minimal
+            intent={Intent.PRIMARY}
           />
         </ControlGroup>
       </FormGroup>

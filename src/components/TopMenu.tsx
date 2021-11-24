@@ -1,5 +1,15 @@
 import * as React from "react";
-import { Navbar, Button, Alignment, Intent, Alert, Classes } from "@blueprintjs/core";
+import {
+  Navbar,
+  Button,
+  Alignment,
+  Intent,
+  Alert,
+  Classes,
+  Dialog,
+  TextArea,
+  H5
+} from "@blueprintjs/core";
 import { useStore } from "effector-react";
 import { $isDark, toggleTheme } from "../store/theme";
 import {
@@ -9,10 +19,16 @@ import {
   openResetConfirmation,
 } from "../store/dictionary";
 import clsx from "clsx";
+import {
+  $isResultOverlayOpen,
+  closeResultOverlay,
+  openResultOverlay,
+} from "../store/result";
 
 export const TopMenu: React.FC = () => {
   const isDark = useStore($isDark);
   const isResetConfirmationOpen = useStore($isResetConfirmationOpen);
+  const isResultOverlayOpen = useStore($isResultOverlayOpen);
 
   return (
     <>
@@ -22,6 +38,12 @@ export const TopMenu: React.FC = () => {
         </Navbar.Group>
 
         <Navbar.Group align={Alignment.RIGHT}>
+          <Button
+            className="bp3-minimal"
+            icon="function"
+            intent={Intent.PRIMARY}
+            onClick={openResultOverlay}
+          />
           <Button
             className="bp3-minimal"
             icon="trash"
@@ -55,6 +77,18 @@ export const TopMenu: React.FC = () => {
           not be able to restore the dictionary later
         </p>
       </Alert>
+
+      <Dialog isOpen={isResultOverlayOpen} onClose={closeResultOverlay}>
+        <div className={Classes.DIALOG_BODY}>
+          <H5>CSV result</H5>
+          <TextArea fill rows={10}/>
+        </div>
+        <div className={Classes.DIALOG_FOOTER}>
+          <div className={Classes.DIALOG_FOOTER_ACTIONS}>
+            <Button onClick={console.log}>Close</Button>
+          </div>
+        </div>
+      </Dialog>
     </>
   );
 };

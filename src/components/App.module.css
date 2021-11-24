@@ -24,11 +24,25 @@
 }
 
 .inputs {
-  margin: 20px 0;
+  padding: 20px 0;
 }
 
 @media only screen and (max-width: 1200px) {
   .root {
     width: 100%;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .menu {
+    padding-top: 10px;
+    top: -10px;
+  }
+
+  .inputs {
+    padding: 10px 0;
   }
 }
