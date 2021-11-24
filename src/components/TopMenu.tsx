@@ -23,6 +23,8 @@ import {
   $csv,
   $isResultOverlayOpen,
   closeResultOverlay,
+  downloadCSV,
+  downloadTXT,
   openResultOverlay,
 } from "../store/result";
 
@@ -87,9 +89,21 @@ export const TopMenu: React.FC = () => {
         </div>
         <div className={Classes.DIALOG_FOOTER}>
           <div className={Classes.DIALOG_FOOTER_ACTIONS}>
-            <Button onClick={closeResultOverlay} outlined>
-              Close
-            </Button>
+            <Button
+              outlined
+              intent={Intent.PRIMARY}
+              onClick={downloadCSV}
+              icon="download"
+              text="CSV"
+            />
+            <Button
+              outlined
+              intent={Intent.PRIMARY}
+              onClick={downloadTXT}
+              icon="download"
+              text="TXT"
+            />
+            <Button onClick={closeResultOverlay} outlined text="Close" />
           </div>
         </div>
       </Dialog>

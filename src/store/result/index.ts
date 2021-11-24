@@ -8,3 +8,9 @@ export const closeResultOverlay = createEvent<React.SyntheticEvent | void>();
 
 export const mapDictionaryToCSVFx = createEffect<DictionaryRow[], string>();
 export const $csv = createStore<string>("");
+
+export const downloadCSV = createEvent<React.SyntheticEvent>();
+export const downloadCSVFx = createEffect<string, void>();
+
+export const downloadTXT = createEvent<React.SyntheticEvent>();
+export const downloadTXTFx = createEffect<string, void>();
