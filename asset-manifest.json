@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/animated-carnival/static/css/main.56e8d535.chunk.css",
-    "main.js": "/animated-carnival/static/js/main.2698b722.chunk.js",
-    "main.js.map": "/animated-carnival/static/js/main.2698b722.chunk.js.map",
+    "main.js": "/animated-carnival/static/js/main.b99d6408.chunk.js",
+    "main.js.map": "/animated-carnival/static/js/main.b99d6408.chunk.js.map",
     "runtime-main.js": "/animated-carnival/static/js/runtime-main.d87029d4.js",
     "runtime-main.js.map": "/animated-carnival/static/js/runtime-main.d87029d4.js.map",
     "static/css/2.cd7d74d2.chunk.css": "/animated-carnival/static/css/2.cd7d74d2.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.cd7d74d2.chunk.css",
     "static/js/2.435fb95c.chunk.js",
     "static/css/main.56e8d535.chunk.css",
-    "static/js/main.2698b722.chunk.js"
+    "static/js/main.b99d6408.chunk.js"
   ]
 }
