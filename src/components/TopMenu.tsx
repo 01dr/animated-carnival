@@ -8,7 +8,7 @@ import {
   Classes,
   Dialog,
   TextArea,
-  H5
+  H5,
 } from "@blueprintjs/core";
 import { useStore } from "effector-react";
 import { $isDark, toggleTheme } from "../store/theme";
@@ -20,6 +20,7 @@ import {
 } from "../store/dictionary";
 import clsx from "clsx";
 import {
+  $csv,
   $isResultOverlayOpen,
   closeResultOverlay,
   openResultOverlay,
@@ -29,6 +30,7 @@ export const TopMenu: React.FC = () => {
   const isDark = useStore($isDark);
   const isResetConfirmationOpen = useStore($isResetConfirmationOpen);
   const isResultOverlayOpen = useStore($isResultOverlayOpen);
+  const csv = useStore($csv);
 
   return (
     <>
@@ -81,11 +83,13 @@ export const TopMenu: React.FC = () => {
       <Dialog isOpen={isResultOverlayOpen} onClose={closeResultOverlay}>
         <div className={Classes.DIALOG_BODY}>
           <H5>CSV result</H5>
-          <TextArea fill rows={10}/>
+          <TextArea fill rows={10} readOnly value={csv} />
         </div>
         <div className={Classes.DIALOG_FOOTER}>
           <div className={Classes.DIALOG_FOOTER_ACTIONS}>
-            <Button onClick={console.log}>Close</Button>
+            <Button onClick={closeResultOverlay} outlined>
+              Close
+            </Button>
           </div>
         </div>
       </Dialog>
